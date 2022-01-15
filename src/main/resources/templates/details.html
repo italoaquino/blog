@@ -26,22 +26,16 @@
 				</div>
 			</nav>
 		</header>
-		
-		 <main style = "padding-top: 30px;">
-				<nav aria-label="breadcrumb">
-				  <ol class="breadcrumb">
-				    <li class="breadcrumb-item" aria-current="page">Posts</li>
-				    <li class="breadcrumb-item active" aria-current="page">Post</li>
-				  </ol>
-				</nav>
-		    <div class="container"  style="width: 60%; margin-top: 40px;">
-		        <nav aria-label="breadcrumb">
-		            <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
-		                <li class="breadcrumb-item"><a href="/posts">Posts</a></li>
-		                <li class="breadcrumb-item active" aria-current="page">Post</li>
-		            </ol>
-		        </nav>
-		        <article>
+			<main>
+			    <div class="container"  style="width: 60%; margin-top: 80px;">
+			
+			 <nav aria-label="breadcrumb">
+	            <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
+	                <li class="breadcrumb-item"><a href="/posts">Posts</a></li>
+	                <li class="breadcrumb-item active" aria-current="page">Post</li>
+	            </ol>
+       		 </nav>
+			    <article>
 		            <h1 class="card-title" style="font-weight: bold; margin-bottom: 20px;"><span th:text="${post.tittle}"></span></h1>
 		            <p class="card-subtitle mb-2 text-muted">
 		                <i class="material-icons">person_outline</i>
@@ -50,18 +44,16 @@
 		                <i class="material-icons">date_range</i>
 		                <span th:text="${post.date}"></span>
 		            </p>
+		            
 		            <section>
-		                <p class="card-text" style="margin-top: 40px;"><span th:utext="${post.text}"></span></p>
+               			 <p class="card-text" style="margin-top: 40px;"><span th:utext="${post.text}"></span></p>
 		            </section>
+		            
 		        </article>
-		    </div>
+		       </div> 
 		  </main>
 
-		<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50" style = "position:absolute;bottom:0;width:100%;">
-	    	<div class="container text-center">
-	      	<small>Copyright &copy; Recomeçar</small>
-	    	</div>
-	    </footer>
+		
 		
 	</body>
 </html>

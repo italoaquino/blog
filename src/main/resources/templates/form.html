@@ -29,7 +29,7 @@
 			</nav>
 		</header>
 				
-		<section style = "margin-top: 60px;">
+		<section style = "margin-top: 60px; font-family: 'Montserrat', sans-serif;">
 			<div class = "container" style = "width: 60%; padding: 30px; ">
 				<nav aria-label="breadcrumb">
 				  <ol class="breadcrumb">
@@ -39,39 +39,42 @@
 				</nav>
 				<div>
 					<th:block th:include="mensagemValidacao"></th:block>
-		            <form method="post">
-		                <div class="form-group" >
-		                    <input type="text" class="form-control" name="tittle" placeholder="Título *">
-		                </div>
-		                <div class="form-group" style = "margin-top: 10px;">
-		                    <input type="text" class="form-control" name="author" placeholder="Autor *">
-		                </div>
-						
-						<div style = "margin-top: 10px;">
-			                <textarea id="summernote" type="text" class="form-control" name="text" placeholder="Texto *"></textarea>
-						</div>
-		                <small class="form-text text-muted">(*) Campos obrigatórios</small>
-						<div style = "margin-top: 10px;">
-		                	<button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publicar</button>
-		                	<a href="/posts" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
-		          		</div>
-		            </form>
+			<th:block th:include="mensagemValidacao"></th:block>
+            <form method="post">
+                <div class="form-group" style = "padding-top: 10px;">
+                    <input type="text" class="form-control" name="tittle" placeholder="Título *">
+                </div>
+
+                <div class="form-group" style = "padding-top: 10px;">
+                    <input type="text" class="form-control" name="author" placeholder="Autor *">
+                </div>
+				
+				<div style = "padding-top: 10px; ">
+					<textarea style = "height: 200px;" type="text-area" class="form-control" name="text" placeholder="Texto *"></textarea>
+				</div>
+
+				<div style = "padding-top: 10px; ">
+	                <small class="form-text text-muted">(*) Campos obrigatórios</small>
+				</div>
+
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publicar</button>
+                <a href="/posts" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
+                <!--<button type="submit" class="btn" style="margin-top: 10px;">Cancelar</button>-->
+            </form>
        			 </div>
 				</div>		
 			</div>		
 		</section>
 
-		<script>
-		    $('#summernote').summernote({
-		        placeholder: 'Texto *',
-		        tabsize: 2,
-		        height: 300
-		    });
-		</script>
-		<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+		
+		<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50" style = "font-family: 'Luxurious Roman', cursive; cursive;position:absolute;bottom:0;width:100%;">
 	    	<div class="container text-center">
 	      	<small>Copyright &copy; Desenvolvido por Ítalo Aquino</small>
 	    	</div>
 	    </footer>
+	
+=
+
+	
 	</body>
 </html>
