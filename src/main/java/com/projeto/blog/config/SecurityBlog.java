@@ -14,7 +14,6 @@ public class SecurityBlog extends WebSecurityConfigurerAdapter{
 
 	 private static final String[] AUTH_LIST = {
 		        "/",
-		        "/posts",
 		        "/posts/{id}"
 		    };
 
