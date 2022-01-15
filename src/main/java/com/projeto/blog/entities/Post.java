@@ -34,7 +34,7 @@ public class Post {
 	public Post() {
 	}
 	
-	public Post(@NotBlank String text, @NotBlank String tittle, @NotBlank String author, LocalDate date) {
+	public Post(String text,String tittle, String author, LocalDate date) {
 		super();
 		this.text = text;
 		this.tittle = tittle;
