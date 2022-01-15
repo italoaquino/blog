@@ -25,7 +25,7 @@ public class PostController {
 		this.service = service;
 	}
 	
-	@RequestMapping(value = "/posts", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView findAll() {
 		ModelAndView mv = new ModelAndView("post");
 		List<Post> posts = this.service.findAll();
@@ -33,7 +33,7 @@ public class PostController {
 		return mv;
 	}
 	
-	@RequestMapping(value = "/posts/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ModelAndView findById(@PathVariable("id") Long id) {
 		ModelAndView mv = new ModelAndView("details");
 		Post post = this.service.findById(id);
@@ -55,7 +55,7 @@ public class PostController {
 		}
 		post.setDate(LocalDate.now());
 		this.service.add(post);
-		return "redirect:/posts";
+		return "redirect:/";
 	}
 	
 	
