@@ -28,45 +28,46 @@
 				</div>
 			</nav>
 		</header>
-				
-		<section style = "margin-top: 60px; font-family: 'Montserrat', sans-serif;">
-			<div class = "container" style = "width: 60%; padding: 30px; ">
-				<nav aria-label="breadcrumb">
-				  <ol class="breadcrumb">
-				    <li class="breadcrumb-item" aria-current="page" href="/">Posts</li>
-				    <li class="breadcrumb-item active" aria-current="page">Novo post</li>
-				  </ol>
-				</nav>
-				<div>
-					<th:block th:include="mensagemValidacao"></th:block>
-			<th:block th:include="mensagemValidacao"></th:block>
-            <form method="post">
-                <div class="form-group" style = "padding-top: 10px;">
-                    <input type="text" class="form-control" name="tittle" placeholder="Título *">
-                </div>
-
-                <div class="form-group" style = "padding-top: 10px;">
-                    <input type="text" class="form-control" name="author" placeholder="Autor *">
-                </div>
-				
-				<div style = "padding-top: 10px; ">
-					<textarea style = "height: 200px;" type="text-area" class="form-control" name="text" placeholder="Texto *"></textarea>
-				</div>
-
-				<div style = "padding-top: 10px; ">
-	                <small class="form-text text-muted">(*) Campos obrigatórios</small>
-				</div>
-
-                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publicar</button>
-                <a href="/" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
-            </form>
-       			 </div>
-				</div>		
-			</div>		
-		</section>
-
 		
-		<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50" style = "font-family: 'Luxurious Roman', cursive; cursive;position:absolute;bottom:0;width:100%;">
+		<div style = "margin-bottom: 60px">	
+			<section style = "margin-top: 60px; font-family: 'Montserrat', sans-serif;">
+				<div class = "container" style = "width: 60%; padding: 30px; ">
+					<nav aria-label="breadcrumb">
+					  <ol class="breadcrumb">
+					    <li class="breadcrumb-item" aria-current="page" href="/">Posts</li>
+					    <li class="breadcrumb-item active" aria-current="page">Novo post</li>
+					  </ol>
+					</nav>
+					<div>
+						<th:block th:include="mensagemValidacao"></th:block>
+				<th:block th:include="mensagemValidacao"></th:block>
+	            <form method="post">
+	                <div class="form-group" style = "padding-top: 10px;">
+	                    <input type="text" class="form-control" name="tittle" placeholder="Título *">
+	                </div>
+	
+	                <div class="form-group" style = "padding-top: 10px;">
+	                    <input type="text" class="form-control" name="author" placeholder="Autor *">
+	                </div>
+					
+					<div style = "padding-top: 10px; ">
+						<textarea style = "height: 200px;" type="text-area" class="form-control" name="text" placeholder="Texto *"></textarea>
+					</div>
+	
+					<div style = "padding-top: 10px; ">
+		                <small class="form-text text-muted">(*) Campos obrigatórios</small>
+					</div>
+	
+	                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publicar</button>
+	                <a href="/" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
+	            </form>
+	       			 </div>
+					</div>		
+				</div>		
+			</section>
+		</div>
+		
+		<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50" style = "font-family: 'Luxurious Roman', cursive; cursive; position: fixed;bottom:0;left:0; width : 100%;" >
 	    	<div class="container text-center">
 	      	<small>Copyright &copy; Desenvolvido por Ítalo Aquino</small>
 	    	</div>

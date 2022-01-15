@@ -20,6 +20,8 @@ public class Post {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	private String guid;
+	
 	@NotBlank
 	@Lob
 	private String text;
@@ -64,6 +66,8 @@ public class Post {
 		return tittle;
 	}
 
+	
+
 	public void setTittle(String tittle) {
 		this.tittle = tittle;
 	}
@@ -82,7 +86,17 @@ public class Post {
 
 	public void setDate(LocalDate date) {
 		this.date = date;
-	}	
+	}
+
+	public String getGuid() {
+		return guid;
+	}
+
+	public void setGuid(String guid) {
+		this.guid = guid;
+	}
+
+	
 	
 	
 	

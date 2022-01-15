@@ -33,10 +33,10 @@ public class PostController {
 		return mv;
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ModelAndView findById(@PathVariable("id") Long id) {
+	@RequestMapping(value = "/{guid}", method = RequestMethod.GET)
+	public ModelAndView findByGuid(@PathVariable("guid") String guid) {
 		ModelAndView mv = new ModelAndView("details");
-		Post post = this.service.findById(id);
+		Post post = this.service.findByGuid(guid);
 		mv.addObject("post", post);
 		return mv;
 	}

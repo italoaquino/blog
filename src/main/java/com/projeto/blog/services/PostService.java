@@ -1,6 +1,7 @@
 package com.projeto.blog.services;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
@@ -20,12 +21,18 @@ public class PostService {
 		return this.repository.findAll();
 	}
 	
-	public Post findById(Long id) {
-		return this.repository.findById(id).get();
+	public Post findByGuid(String guid) {
+		return this.repository.findByGuid(guid);
 	}
 	
 	public Post add(Post post) {
-		return this.repository.save(post);
+		Post p1 = new Post();
+		p1.setTittle(post.getTittle());
+		p1.setDate(post.getDate());
+		p1.setAuthor(post.getAuthor());
+		p1.setText(post.getText());
+		p1.setGuid(UUID.randomUUID().toString());
+		return this.repository.save(p1);
 	}
 	
 }

@@ -24,11 +24,11 @@
 				</div>
 			</nav>
 		</header>		
-		<section style = "padding-top: 60px; padding-bottom: 20px;">
-			<div class = "container" style = "width: 60%; padding: 30px; font-family: 'Montserrat', sans-serif;">
+		<section >
+			<div class = "container" style = "width: 60%; padding-top: 3%; font-family: 'Montserrat', sans-serif;">
 				<nav aria-label="breadcrumb">
 				  <ol class="breadcrumb">
-				    <li class="breadcrumb-item" aria-current="page">Posts /</li>
+				    <li class="breadcrumb-item" aria-current="page" href="/">Posts /</li>
 				  </ol>
 				</nav>
 				<div class="card" style="margin-top: 30px; " th:each="post : ${posts}">
@@ -37,13 +37,13 @@
                     	<span th:text = "${post.author}",></span>
                     	<span th:text = "${post.date}"></span>
                 	</p>
-					<a th:href="${(#mvc.url('PC#findById').arg(0, post.id)).build()}" style="font-weight: bold; color: black; padding-top: 5px; " ><h4 class="card-title" ><h1>teste</h1></a>
+					<a th:href="${(#mvc.url('PC#findByGuid').arg(0, post.guid)).build()}" style="font-weight: bold; color: black; padding-top: 5px; " ><h4 class="card-title" ><h1>teste</h1></a>
                 	<p class="card-text"><span th:utext ="${#strings.abbreviate(post.text, 400)}"></span></p>	
        			  </div>
 				</div>		
 			</div>		
 		</section>
-		<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50" style = "font-family: 'Luxurious Roman', cursive; ">
+		<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50" style = "font-family: 'Luxurious Roman', cursive;position: fixed;bottom:0;left:0; width : 100%; ">
 	    	<div class="container text-center">
 	      	<small>Copyright &copy; Desenvolvido por Ítalo Aquino</small>
 	    	</div>
