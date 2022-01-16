@@ -37,7 +37,7 @@
                     	<span th:text = "${post.author}",></span>
                     	<span th:text = "${post.date}"></span>
                 	</p>
-					<a th:href="${(#mvc.url('PC#findByGuid').arg(0, post.guid)).build()}" style="font-weight: bold; color: black; padding-top: 5px; " ><h4 class="card-title" ><h1>teste</h1></a>
+					<a th:href="${(#mvc.url('PC#findByGuid').arg(0, post.guid)).build()}" style="font-weight: bold; color: black; padding-top: 5px; " ><h4 class="card-title" ><span th:text = "${post.tittle}",></span></a>
                 	<p class="card-text"><span th:utext ="${#strings.abbreviate(post.text, 400)}"></span></p>	
        			  </div>
 				</div>		
