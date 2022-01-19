@@ -3,9 +3,11 @@ package com.projeto.blog.services;
 import java.util.List;
 import java.util.UUID;
 
+import org.apache.logging.log4j.util.Strings;
 import org.springframework.stereotype.Service;
 
 import com.projeto.blog.entities.Post;
+import com.projeto.blog.exception.ObjectNotFound;
 import com.projeto.blog.repositories.PostRepository;
 
 @Service
@@ -22,7 +24,11 @@ public class PostService {
 	}
 	
 	public Post findByGuid(String guid) {
-		return this.repository.findByGuid(guid);
+		Post p1 = this.repository.findByGuid(guid);
+		if(Strings.isBlank(guid)) {
+			throw new ObjectNotFound("Objeto nao encontrado!");
+		}
+		return p1;
 	}
 	
 	public Post add(Post post) {
@@ -33,6 +39,11 @@ public class PostService {
 		p1.setText(post.getText());
 		p1.setGuid(UUID.randomUUID().toString());
 		return this.repository.save(p1);
+	}
+
+	public void remove(String guid) {
+		Post p1 = this.findByGuid(guid);
+		this.repository.delete(p1);
 	}
 	
 }
