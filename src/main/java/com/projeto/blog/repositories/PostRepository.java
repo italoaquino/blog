@@ -1,11 +1,14 @@
 package com.projeto.blog.repositories;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.projeto.blog.entities.Post;
 
 public interface PostRepository extends JpaRepository<Post, Long>{
 
-	Post findByGuid(String guid);
+
+	Optional<Post> findByGuid(String guid);
 
 }

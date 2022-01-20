@@ -22,7 +22,7 @@ public class Post {
 	
 	private String guid;
 	
-	@NotBlank
+	@NotBlank(message = "Nao pode ser nulo!")
 	@Lob
 	private String text;
 	
@@ -38,12 +38,11 @@ public class Post {
 	public Post() {
 	}
 	
-	public Post(String text,String tittle, String author, LocalDate date) {
+	public Post(String text,String tittle, String author) {
 		super();
 		this.text = text;
 		this.tittle = tittle;
 		this.author = author;
-		this.date = date;
 	}
 
 	public Long getId() {
