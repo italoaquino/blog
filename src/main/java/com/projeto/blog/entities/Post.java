@@ -6,7 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -22,7 +24,13 @@ public class Post {
 	
 	private String guid;
 	
-	@NotBlank(message = "Nao pode ser nulo!")
+	@ManyToOne
+	@JoinColumn(name = "category_id")
+	private Category category;
+	
+	private String subtitle; 
+	
+	@NotBlank
 	@Lob
 	private String text;
 	
@@ -38,11 +46,21 @@ public class Post {
 	public Post() {
 	}
 	
-	public Post(String text,String tittle, String author) {
-		super();
+	public Post(String text,String tittle, String author, Category category) {
 		this.text = text;
+		this.category = category;
 		this.tittle = tittle;
 		this.author = author;
+	}
+
+	
+	
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 	public Long getId() {

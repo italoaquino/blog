@@ -1,9 +1,14 @@
 package com.projeto.blog.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -20,6 +25,9 @@ public class Category {
 	@NotBlank
 	private String name;
 
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL )
+	private List<Post> posts = new ArrayList<>();
+	
 	public Category() {
 	}
 	

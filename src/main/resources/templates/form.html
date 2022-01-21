@@ -16,7 +16,7 @@
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
 	</head>
 	<body style = "padding: 0;margin: 0;">
-		<div th:replace="~{nav :: nav}"></div>		
+        <div th:replace="~{nav :: nav}"></div>		
 		<div>	
 			<section style = "margin-top: 9%;height:30%; font-family: 'Montserrat', sans-serif;">
 				<div class = "container" style = "width: 60%;">
@@ -33,6 +33,10 @@
 						<span th:if="${#fields.hasErrors('author')}" th:errors="*{author}" class="text-danger"></span>
 						<input type="text" th:field="*{author}" placeholder="Autor*" class="form-control mb-4 col-4">
 			      		<span th:if="${#fields.hasErrors('text')}" th:errors="*{text}" class="text-danger"></span>
+		     			<select th:field="*{category}" class="form-control mb-4 col-4">
+						    <option th:each="cat: ${category}"
+			                th:value="${cat.id}" th:text="${cat.name}"></option>
+						</select>
 			      		<textarea style = "height: 200px;" type="text-area" class="form-control" th:field="*{text}" name="text" placeholder="Texto *"></textarea>
 						<button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publicar</button>
 	                	<a href="/" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
@@ -43,6 +47,5 @@
 			</section>
 		</div>
 				
-			<div th:replace="~{footer :: footer}"></div>			
 	</body>
 </html>
